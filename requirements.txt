@@ -1,0 +1,9 @@
+# Core dependencies
+boto3>=1.28.0,<2.0.0
+stripe>=7.0.0,<8.0.0
+pydantic>=2.0.0,<3.0.0
+PyJWT>=2.8.0,<3.0.0
+
+# AWS CDK for infrastructure
+aws-cdk-lib>=2.100.0
+constructs>=10.0.0
