@@ -1,4 +1,6 @@
-# Appointment Booking Platform
+<div align="center">
+
+# OpenSlots Lambda
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![AWS Lambda](https://img.shields.io/badge/AWS-Lambda-orange.svg)](https://aws.amazon.com/lambda/)
@@ -6,31 +8,24 @@
 [![Stripe](https://img.shields.io/badge/Stripe-Payment-purple.svg)](https://stripe.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A production-ready, serverless appointment booking system built with Python, AWS Lambda, DynamoDB, and Stripe integration.
+### A production-ready, serverless appointment booking system
 
-## Features
+</div>
 
-- JWT Authentication - Secure token-based auth with role support
-- Smart Availability - Real-time slot calculation based on staff schedules
-- Double-Booking Prevention - Atomic DynamoDB writes prevent conflicts
-- Stripe Integration - Payment intents, webhooks, and refunds
-- Multi-Tenant - Organization isolation via partition keys
-- Scalable - Serverless architecture auto-scales with demand
+## About
 
-## Architecture
+OpenSlots is a serverless appointment booking platform built with Python, AWS Lambda, DynamoDB, and Stripe. It provides a complete solution for managing appointments, staff schedules, and payments.
 
-```
-+-----------------+     +-----------------+     +-----------------+
-|   API Gateway   |---->|  Lambda Layers  |---->|    DynamoDB     |
-|  (REST API)     |     |  (Handlers)     |     |  (Single Table) |
-+-----------------+     +-----------------+     +-----------------+
-                              |
-                              v
-                     +-----------------+
-                     |     Stripe      |
-                     |   (Payments)    |
-                     +-----------------+
-```
+### Key Features
+
+- **JWT Authentication** - Secure token-based auth with role support
+- **Real-time Availability** - Smart slot calculation based on staff schedules
+- **Double-Booking Prevention** - Atomic DynamoDB writes prevent conflicts
+- **Stripe Integration** - Payment intents, webhooks, and refunds
+- **Multi-Tenant** - Organization isolation via partition keys
+- **Serverless** - Auto-scales with demand
+
+---
 
 ## Quick Start
 
@@ -45,7 +40,7 @@ A production-ready, serverless appointment booking system built with Python, AWS
 ```bash
 # Clone the repository
 git clone https://github.com/danyalaltaff11555/OpenSlots-lambda.git
-cd appointment-lambda
+cd OpenSlots-lambda
 
 # Install dependencies
 poetry install --with infra
@@ -65,32 +60,24 @@ cd infrastructure
 cdk deploy
 ```
 
-## Project Structure
+---
+
+## Architecture
 
 ```
-appointment-lambda/
-├── src/
-│   ├── handlers/          # Lambda handlers
-│   │   ├── booking.py
-│   │   ├── availability.py
-│   │   ├── organization.py
-│   │   ├── staff.py
-│   │   └── payment.py
-│   ├── services/          # Business logic
-│   ├── models/            # Data models
-│   ├── repositories/      # Data access
-│   └── utils/             # Utilities
-├── tests/                 # Unit & integration tests
-├── docs/                  # Architecture & use cases
-├── infrastructure/        # AWS CDK stacks
-└── pyproject.toml         # Dependencies
++-----------------+     +-----------------+     +-----------------+
+|   API Gateway   |---->|  Lambda Layers  |---->|    DynamoDB     |
+|  (REST API)     |     |  (Handlers)     |     |  (Single Table) |
++-----------------+     +-----------------+     +-----------------+
+                              |
+                              v
+                     +-----------------+
+                     |     Stripe      |
+                     |   (Payments)    |
+                     +-----------------+
 ```
 
-## Documentation
-
-- [Architecture](docs/architecture.md) - System design and data models
-- [Use Cases](docs/usecases.md) - Business workflows
-- [Contributing](CONTRIBUTING.md) - How to contribute
+---
 
 ## Tech Stack
 
@@ -104,24 +91,38 @@ appointment-lambda/
 | Payments | Stripe |
 | Auth | JWT |
 
+---
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | /orgs | Create organization |
-| GET | /orgs/{id} | Get organization |
-| POST | /staff | Add staff member |
-| GET | /availability | Query available slots |
-| POST | /bookings | Create booking |
-| GET | /bookings/{id} | Get booking |
-| PATCH | /bookings/{id} | Reschedule booking |
-| DELETE | /bookings/{id} | Cancel booking |
-| POST | /payments | Create payment |
+| `POST` | `/orgs` | Create organization |
+| `GET` | `/orgs/{id}` | Get organization |
+| `POST` | `/staff` | Add staff member |
+| `GET` | `/availability` | Query available slots |
+| `POST` | `/bookings` | Create booking |
+| `GET` | `/bookings/{id}` | Get booking |
+| `PATCH` | `/bookings/{id}` | Reschedule booking |
+| `DELETE` | `/bookings/{id}` | Cancel booking |
+| `POST` | `/payments` | Create payment |
+
+---
+
+## Documentation
+
+- [Architecture](docs/architecture.md) - System design and data models
+- [Use Cases](docs/usecases.md) - Business workflows
+- [Contributing](CONTRIBUTING.md) - How to contribute
+
+---
 
 ## Contributing
 
-Contributions are welcome! Please read our Contributing Guide for details.
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details.
+
+---
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
