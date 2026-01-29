@@ -111,6 +111,7 @@ cdk deploy
 
 ## Documentation
 
+- [Deployment Guide](docs/deployment/README.md) - Step-by-step deployment
 - [Architecture](docs/architecture.md) - System design and data models
 - [Use Cases](docs/usecases.md) - Business workflows
 - [Contributing](CONTRIBUTING.md) - How to contribute
